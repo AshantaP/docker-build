@@ -17,5 +17,11 @@ pipeline {
                 sh "terraform apply -auto-approve"
             }
         }
+        stage('Terraform-Destroy') {
+            steps {
+                input 'Do you want to destory'
+                echo "Yes"
+            }
+        }
     }
 }
